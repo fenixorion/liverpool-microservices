@@ -16,7 +16,7 @@ public class PedidoController {
     @Autowired
     private PedidoService pedidoService;
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<Pedido> crearPedido(@Valid @RequestBody Pedido pedido) {
         Pedido creado = pedidoService.createPedido(pedido);
         return ResponseEntity.status(201).body(creado);
