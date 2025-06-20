@@ -1,0 +1,554 @@
+{
+	"info": {
+		"_postman_id": "5f6a2710-2da9-413d-9199-e7558e56b483",
+		"name": "Liverpool API",
+		"description": "Colección de pruebas para la API de Clientes y Pedidos del Puerto de Liverpool",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25610330"
+	},
+	"item": [
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "Crear cliente válido",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Juan\",\n  \"apellidoPaterno\": \"Perez\",\n  \"apellidoMaterno\": \"Lopez\",\n  \"email\": \"juan.perez@correo.com\",\n  \"direccion\": \"CDMX\"\n}"
+						},
+						"url": {
+							"raw": "https://liverpoolapi.onrender.com/api/v1/users/create",
+							"protocol": "https",
+							"host": [
+								"liverpoolapi",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear cliente inválido (caracteres)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"J0s3\",\n  \"apellidoPaterno\": \"Perez\",\n  \"apellidoMaterno\": \"\",\n  \"email\": \"no-valido\",\n  \"direccion\": \"\"\n}"
+						},
+						"url": {
+							"raw": "https://liverpoolapi.onrender.com/api/v1/users/create",
+							"protocol": "https",
+							"host": [
+								"liverpoolapi",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener todos los clientes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `\r",
+									"<style type=\"text/css\">\r",
+									"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+									"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+									"    .tftable tr {background-color:#ffffff;}\r",
+									"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+									"    .tftable tr:hover {background-color:#e0ffff;}\r",
+									"</style>\r",
+									"\r",
+									"<table class=\"tftable\" border=\"1\">\r",
+									"    <tr>\r",
+									"        <th>ID</th>\r",
+									"        <th>Nombre</th>\r",
+									"        <th>Apellido Paterno</th>\r",
+									"        <th>Apellido Materno</th>\r",
+									"        <th>Email</th>\r",
+									"        <th>Direccion</th>\r",
+									"    </tr>\r",
+									"    \r",
+									"    {{#each response}}\r",
+									"        <tr id=row_{{@key}}>\r",
+									"            <td>{{id}}</td>\r",
+									"            <td>{{nombre}}</td>\r",
+									"            <td>{{apellidoPaterno}}</td>\r",
+									"            <td>{{apellidoMaterno}}</td>\r",
+									"            <td>{{email}}</td>\r",
+									"            <td>{{direccion}}</td>\r",
+									"        </tr>\r",
+									"    {{/each}}\r",
+									"</table>\r",
+									"`;\r",
+									"\r",
+									"function constructVisualizerPayload() {\r",
+									"    return { response: pm.response.json() };\r",
+									"}\r",
+									"\r",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://liverpoolapi.onrender.com/api/v1/users/search",
+							"protocol": "https",
+							"host": [
+								"liverpoolapi",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar cliente por nombre completo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://liverpoolapi.onrender.com/api/v1/users/search/nombre/:nombre/apellidoPaterno/:apellidoPaterno/apellidoMaterno/:apellidoMaterno",
+							"protocol": "https",
+							"host": [
+								"liverpoolapi",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"search",
+								"nombre",
+								":nombre",
+								"apellidoPaterno",
+								":apellidoPaterno",
+								"apellidoMaterno",
+								":apellidoMaterno"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "nombre",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "nombre",
+									"value": "Sergio"
+								},
+								{
+									"key": "apellidoPaterno",
+									"value": "maldonado"
+								},
+								{
+									"key": "apellidoMaterno",
+									"value": "p"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar cliente existente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://liverpoolapi.onrender.com/api/v1/users/delete/:id",
+							"protocol": "https",
+							"host": [
+								"liverpoolapi",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6854e86a50fd846c04e553b9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar cliente no existente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://liverpoolapi.onrender.com/api/v1/users/delete/:id",
+							"protocol": "https",
+							"host": [
+								"liverpoolapi",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6854e86a50fd846c04e553b9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar cliente",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id\": \"68531f0d36de3164d8d5b243\",\n        \"nombre\": \"sergio antonio\",\n        \"apellidoPaterno\": \"maldonado\",\n        \"apellidoMaterno\": \"paredes\",\n        \"email\": \"smaldonado@gmail.com\",\n        \"direccion\": \"Av 17 Oriente 21 Cholula Puebla\"\n    }"
+						},
+						"url": {
+							"raw": "https://liverpoolapi.onrender.com/api/v1/users/update/:id",
+							"protocol": "https",
+							"host": [
+								"liverpoolapi",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"update",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "68531f0d36de3164d8d5b243"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pedidos",
+			"item": [
+				{
+					"name": "Crear pedido válido",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"codigoProducto\": \"APPLE-NOTEBOOK\",\n  \"cantidad\": 1,\n  \"precio\": 34999.99,\n  \"clienteId\": \"68531f0d36de3164d8d5b243\"\n}"
+						},
+						"url": {
+							"raw": "https://liverpoolapi.onrender.com/api/v1/pedidos/create",
+							"protocol": "https",
+							"host": [
+								"liverpoolapi",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"pedidos",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear pedido inválido (precio con símbolo)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"codigoProducto\": \"TV-SAMSUNG-43\",\n  \"cantidad\": 2,\n  \"precio\": \"$7499.99\",\n  \"clienteId\": \"68531f0d36de3164d8d5b243\"\n}"
+						},
+						"url": {
+							"raw": "https://liverpoolapi.onrender.com/api/v1/pedidos/create",
+							"protocol": "https",
+							"host": [
+								"liverpoolapi",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"pedidos",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear pedido inválido (cantidad como texto)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"codigoProducto\": \"TV-SAMSUNG-43\",\n  \"cantidad\": \"dos\",\n  \"precio\": \"$7499.99\",\n  \"clienteId\": \"68531f0d36de3164d8d5b243\"\n}"
+						},
+						"url": {
+							"raw": "https://liverpoolapi.onrender.com/api/v1/pedidos/create",
+							"protocol": "https",
+							"host": [
+								"liverpoolapi",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"pedidos",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener todos los pedidos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://liverpoolapi.onrender.com/api/v1/pedidos/search",
+							"protocol": "https",
+							"host": [
+								"liverpoolapi",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"pedidos",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener pedidos por clienteId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://liverpoolapi.onrender.com/api/v1/pedidos/search/cliente/:id",
+							"protocol": "https",
+							"host": [
+								"liverpoolapi",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"pedidos",
+								"search",
+								"cliente",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "68531f0d36de3164d8d5b243"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar pedido",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"codigoProducto\": \"APPLE-NOTEBOOK\",\n        \"cantidad\": 10,\n        \"precio\": 34999.99,\n        \"clienteId\": \"68531f0d36de3164d8d5b243\"\n    }"
+						},
+						"url": {
+							"raw": "https://liverpoolapi.onrender.com/api/v1/pedidos/update/:id",
+							"protocol": "https",
+							"host": [
+								"liverpoolapi",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"pedidos",
+								"update",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6854f21550fd846c04e553bb"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar pedido válido",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://liverpoolapi.onrender.com/api/v1/pedidos/delete/:id",
+							"protocol": "https",
+							"host": [
+								"liverpoolapi",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"pedidos",
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6854f21550fd846c04e553bb"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar pedido no existente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://liverpoolapi.onrender.com/api/v1/pedidos/delete/:id",
+							"protocol": "https",
+							"host": [
+								"liverpoolapi",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"pedidos",
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6854f21550fd846c04e553bb"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
