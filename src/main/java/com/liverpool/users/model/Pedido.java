@@ -1,6 +1,7 @@
 package com.liverpool.users.model;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -28,7 +29,7 @@ public class Pedido {
     private Integer cantidad;
 
     @NotNull(message = "El precio es obligatorio")
-    @Min(value = 1, message = "El precio debe ser mayor a cero")
+    @DecimalMin(value = "0.01", message = "El precio debe ser mayor a 0")
     @Schema(example = "1.00")
     private Double precio;
 

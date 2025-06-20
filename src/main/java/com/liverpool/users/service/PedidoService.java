@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+import static com.liverpool.users.util.NumberUtils.truncateTo2Decimals;
+
 @Service
 public class PedidoService {
 
@@ -51,7 +53,7 @@ public class PedidoService {
 
         pedido.setCodigoProducto(actualizacion.getCodigoProducto());
         pedido.setCantidad(actualizacion.getCantidad());
-        pedido.setPrecio(actualizacion.getPrecio());
+        pedido.setPrecio(truncateTo2Decimals(pedido.getPrecio()));
         pedido.setClienteId(actualizacion.getClienteId());
 
         return pedidoRepo.save(pedido);
