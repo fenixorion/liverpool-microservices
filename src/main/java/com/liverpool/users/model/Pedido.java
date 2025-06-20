@@ -30,10 +30,10 @@ public class Pedido {
 
     @NotNull(message = "El precio es obligatorio")
     @DecimalMin(value = "0.01", message = "El precio debe ser mayor a 0")
-    @Schema(example = "1.00")
+    @Schema(example = "1499.99")
     private Double precio;
 
     @NotBlank(message = "El ID del cliente es obligatorio")
-    @Schema(example = "juan")
+    @Schema(example = "6854e86a50fd846c04e553b9")
     private String clienteId;
 }
