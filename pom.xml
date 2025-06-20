@@ -12,8 +12,8 @@
     <artifactId>users</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>users</name>
-    <description>users</description>
+    <name>LiverpoolAPI</name>
+    <description>LiverpoolAPI</description>
     <url/>
     <licenses>
         <license/>
