@@ -1,0 +1,72 @@
+[
+  {
+    "nombre": "María",
+    "apellidoPaterno": "García",
+    "apellidoMaterno": "Ramírez",
+    "email": "maria.garcia@example.com",
+    "direccion": "Monterrey, NL"
+  },
+  {
+    "nombre": "Luis",
+    "apellidoPaterno": "Fernández",
+    "apellidoMaterno": "Cortés",
+    "email": "luis.fernandez@mail.com",
+    "direccion": "Guadalajara, JAL"
+  },
+  {
+    "nombre": "Ana",
+    "apellidoPaterno": "Martínez",
+    "apellidoMaterno": "Díaz",
+    "email": "ana.martinez@correo.mx",
+    "direccion": "Toluca, Estado de México"
+  },
+  {
+    "nombre": "Carlos",
+    "apellidoPaterno": "Rojas",
+    "apellidoMaterno": "Salinas",
+    "email": "carlos.rojas@liverpool.com",
+    "direccion": "Mérida, Yucatán"
+  },
+  {
+    "nombre": "Sofía",
+    "apellidoPaterno": "Hernández",
+    "apellidoMaterno": "Moreno",
+    "email": "sofia.hernandez@outlook.com",
+    "direccion": "León, Guanajuato"
+  },
+  {
+    "nombre": "Pedro",
+    "apellidoPaterno": "Castillo",
+    "apellidoMaterno": "Vega",
+    "email": "pedro.castillo@gmail.com",
+    "direccion": "Puebla, Puebla"
+  },
+  {
+    "nombre": "Laura",
+    "apellidoPaterno": "Mendoza",
+    "apellidoMaterno": "Ortega",
+    "email": "laura.mendoza@correo.com",
+    "direccion": "Querétaro, QRO"
+  },
+  {
+    "nombre": "Jorge",
+    "apellidoPaterno": "Navarro",
+    "apellidoMaterno": "Silva",
+    "email": "jorge.navarro@empresa.mx",
+    "direccion": "Tijuana, BC"
+  },
+  {
+    "nombre": "Elena",
+    "apellidoPaterno": "Cruz",
+    "apellidoMaterno": "Torres",
+    "email": "elena.cruz@hotmail.com",
+    "direccion": "Cancún, Quintana Roo"
+  },
+  {
+    "nombre": "Ricardo",
+    "apellidoPaterno": "Aguilar",
+    "apellidoMaterno": "Ruiz",
+    "email": "ricardo.aguilar@dominio.mx",
+    "direccion": "San Luis Potosí, SLP"
+  }
+]

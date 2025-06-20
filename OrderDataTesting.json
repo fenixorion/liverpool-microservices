@@ -1,0 +1,62 @@
+[
+  {
+    "codigoProducto": "SAMSUNG-TV-55",
+    "cantidad": 2,
+    "precio": 13499.50,
+    "clienteId": "68531f0d36de3164d8d5b243"
+  },
+  {
+    "codigoProducto": "HP-LAPTOP-15",
+    "cantidad": 1,
+    "precio": 10899.00,
+    "clienteId": "68531f0d36de3164d8d5b243"
+  },
+  {
+    "codigoProducto": "LOGITECH-MOUSE-WIRELESS",
+    "cantidad": 3,
+    "precio": 899.90,
+    "clienteId": "68531f0d36de3164d8d5b243"
+  },
+  {
+    "codigoProducto": "LG-REFRIGERATOR-21",
+    "cantidad": 1,
+    "precio": 17899.00,
+    "clienteId": "68531f0d36de3164d8d5b243"
+  },
+  {
+    "codigoProducto": "IPHONE-15-PRO",
+    "cantidad": 1,
+    "precio": 25999.99,
+    "clienteId": "68531f0d36de3164d8d5b243"
+  },
+  {
+    "codigoProducto": "BOSE-AUDIO-SYSTEM",
+    "cantidad": 1,
+    "precio": 6999.95,
+    "clienteId": "68531f0d36de3164d8d5b243"
+  },
+  {
+    "codigoProducto": "DELL-GAMING-PC",
+    "cantidad": 1,
+    "precio": 24499.00,
+    "clienteId": "68531f0d36de3164d8d5b243"
+  },
+  {
+    "codigoProducto": "SAMSUNG-WASHER-FRONT",
+    "cantidad": 1,
+    "precio": 12699.50,
+    "clienteId": "68531f0d36de3164d8d5b243"
+  },
+  {
+    "codigoProducto": "XIAOMI-SMARTWATCH-7",
+    "cantidad": 2,
+    "precio": 2499.75,
+    "clienteId": "68531f0d36de3164d8d5b243"
+  },
+  {
+    "codigoProducto": "NINTENDO-SWITCH-OLED",
+    "cantidad": 1,
+    "precio": 8899.90,
+    "clienteId": "68531f0d36de3164d8d5b243"
+  }
+]
